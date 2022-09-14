@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://levels/data_level01/data.hterrain" type="Resource" id=1]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=3]
+[ext_resource path="res://assets/textures/grass/n_grass_diff_0_30.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/grass/n_grass_diff_0_01.png" type="Texture" id=5]
+[ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=6]
+[ext_resource path="res://assets/textures/pattern_219/slot0_albedo_bump.packed_tex" type="Texture" id=7]
+[ext_resource path="res://assets/textures/pattern_219/slot1_normal_roughness.packed_tex" type="Texture" id=8]
+[ext_resource path="res://assets/textures/pattern_219/slot0_normal_roughness.packed_tex" type="Texture" id=9]
+[ext_resource path="res://assets/textures/pattern_219/slot1_albedo_bump.packed_tex" type="Texture" id=10]
+[ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=11]
+[ext_resource path="res://scenes/cars/amongus.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+mode = 0
+textures = [ [ ExtResource( 7 ), ExtResource( 10 ) ], [ ExtResource( 9 ), ExtResource( 8 ) ] ]
+
+[node name="Level01" type="Spatial"]
+
+[node name="HTerrain" type="Spatial" parent="."]
+script = ExtResource( 11 )
+lod_scale = 2.0
+_terrain_data = ExtResource( 1 )
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource( 1 )
+render_layers = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
+
+[node name="HTerrainDetailLayer2" type="Spatial" parent="HTerrain"]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+texture = ExtResource( 5 )
+view_distance = 500.0
+density = 0.534
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3( 2, 2, 2 )
+
+[node name="HTerrainDetailLayer3" type="Spatial" parent="HTerrain"]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+layer_index = 1
+texture = ExtResource( 4 )
+view_distance = 500.0
+density = 0.555
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3( 0.1, 0.1, 0.1 )
+
+[node name="HTerrainDetailLayer4" type="Spatial" parent="HTerrain"]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+layer_index = 2
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3( 1, 1, 1 )
+
+[node name="adada" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 333, 3, 228 )
+
+[node name="Camera" type="Camera" parent="adada"]
+transform = Transform( 2.96368e-08, 0.105257, -0.994445, -3.13692e-09, 0.994445, 0.105257, 1, 0, 2.98023e-08, -12.6414, 4.99346, 0.0135956 )

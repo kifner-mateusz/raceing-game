@@ -1,0 +1,8 @@
+{
+	"contains_albedo": false,
+	"resolution": 1024,
+	"src": {
+		"a": "res://assets/textures/pattern_216/specular.tga",
+		"rgb": "res://assets/textures/pattern_216/normal.tga"
+	}
+}
