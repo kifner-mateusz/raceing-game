@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/adada.glb-b7db6adb42cab52e729edc34f1664e5c.scn"
+path="res://.import/car_model.glb-df05698fcd555973893725aafc8e8df8.scn"
 
 [deps]
 
-source_file="res://assets/models/adada.glb"
-dest_files=[ "res://.import/adada.glb-b7db6adb42cab52e729edc34f1664e5c.scn" ]
+source_file="res://assets/models/car_model.glb"
+dest_files=[ "res://.import/car_model.glb-df05698fcd555973893725aafc8e8df8.scn" ]
 
 [params]
 

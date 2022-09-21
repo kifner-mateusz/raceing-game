@@ -80,4 +80,4 @@ shader_params/u_instance_scale = Vector3( 1, 1, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 333, 3, 228 )
 
 [node name="Camera" type="Camera" parent="adada"]
-transform = Transform( 2.96368e-08, 0.105257, -0.994445, -3.13692e-09, 0.994445, 0.105257, 1, 0, 2.98023e-08, -12.6414, 4.99346, 0.0135956 )
+transform = Transform( -0.938805, 0.135405, -0.316718, 0, 0.919493, 0.393106, 0.344448, 0.36905, -0.863225, -2.76794, 3.43554, -7.54414 )
